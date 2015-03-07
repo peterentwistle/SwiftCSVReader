@@ -15,8 +15,11 @@ orange,1.49
 let csv = CSVReader(fileName: "test")
 
 println(csv.headers)
-println(csv.row(1))
-println(csv.row(1)["name"])
+println(csv.rows[0])
+println(csv.rows[1]["name"])
+println(csv.rows[1]["price"])
+println(csv.columns["name"])
+println(csv.columns["price"])
 println(csv.numberOfColumns)
 println(csv.numberOfRows)
 ```
@@ -26,7 +29,10 @@ println(csv.numberOfRows)
 ```
 [name, price]
 [price: 1.29, name: water]
-Optional("water")
+Optional("coffee")
+Optional("1.99")
+Optional(["water", "coffee", "tea", "orange"])
+Optional(["1.29", "1.99", "1.89", "1.49"])
 2
-5
+4
 ```
