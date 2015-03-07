@@ -12,7 +12,7 @@ public class CSVReader {
     
     private var _numberOfColumns: Int
     private var _numberOfRows: Int
-    private var _lines = [String]?()
+    private var _lines = [String]()
     public var headers = [String]()
     
     public var numberOfColumns: Int {
@@ -32,17 +32,17 @@ public class CSVReader {
         var csv = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)!
         csv = csv.stringByReplacingOccurrencesOfString("\r", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         _lines = csv.componentsSeparatedByString("\n")
-        _numberOfColumns = _lines?[0].componentsSeparatedByString(",").count ?? 0
-        _numberOfRows = _lines?.count ?? 0
-        headers = _lines?[0].componentsSeparatedByString(",") ?? [""]
+        _numberOfColumns = _lines[0].componentsSeparatedByString(",").count
+        _numberOfRows = _lines.count
+        headers = _lines[0].componentsSeparatedByString(",")
     }
     
     public func row(rowId: Int) -> [String: String] {
         var row = [String: String]()
-        let vals = _lines?[rowId].componentsSeparatedByString(",")
+        let vals = _lines[rowId].componentsSeparatedByString(",")
         var i = 0
         for header in headers {
-            row[header] = vals?[i++]
+            row[header] = vals[i++]
         }
         return row
     }
