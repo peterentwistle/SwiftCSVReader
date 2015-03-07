@@ -29,15 +29,22 @@ public class CSVReader {
     
     init(fileName: String) {
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "csv")
-        let csv = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)!
+        var csv = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)!
+        csv = csv.stringByReplacingOccurrencesOfString("\r", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         _lines = csv.componentsSeparatedByString("\n")
         _numberOfColumns = _lines?[0].componentsSeparatedByString(",").count ?? 0
         _numberOfRows = _lines?.count ?? 0
-        headers = row(0)
+        headers = _lines?[0].componentsSeparatedByString(",") ?? [""]
     }
     
-    public func row(rowId: Int) -> [String] {
-        return _lines?[rowId].componentsSeparatedByString(",") ?? [""]
+    public func row(rowId: Int) -> [String: String] {
+        var row = [String: String]()
+        let vals = _lines?[rowId].componentsSeparatedByString(",")
+        var i = 0
+        for header in headers {
+            row[header] = vals?[i++]
+        }
+        return row
     }
     
     // To do

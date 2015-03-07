@@ -233,6 +233,7 @@
 				D009CC4A1AAA5FC600B030BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
