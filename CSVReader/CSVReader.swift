@@ -14,6 +14,8 @@ public class CSVReader {
     private var _numberOfRows: Int
     private var _lines = [String]()
     public var headers = [String]()
+    public var columns = [String: [String]]()
+    public var rows = [[String: String]]()
     
     public var numberOfColumns: Int {
         get {
@@ -23,7 +25,7 @@ public class CSVReader {
     
     public var numberOfRows: Int {
         get {
-            return _numberOfRows
+            return _numberOfRows - 1
         }
     }
     
@@ -35,21 +37,34 @@ public class CSVReader {
         _numberOfColumns = _lines[0].componentsSeparatedByString(",").count
         _numberOfRows = _lines.count
         headers = _lines[0].componentsSeparatedByString(",")
+        setRows()
+        setColumns()
     }
     
-    public func row(rowId: Int) -> [String: String] {
-        var row = [String: String]()
-        let vals = _lines[rowId].componentsSeparatedByString(",")
-        var i = 0
-        for header in headers {
-            row[header] = vals[i++]
+    private func setRows() {
+        var rows = [[String: String]]()
+        for i in 1..<_numberOfRows {
+            var row = [String: String]()
+            let vals = _lines[i].componentsSeparatedByString(",")
+            var i = 0
+            for header in headers {
+                row[header] = vals[i++]
+            }
+            rows.append(row)
         }
-        return row
+        self.rows = rows
     }
     
-    // To do
-    public func column(columnId: Int) {
-        
+    private func setColumns() {
+        var columns = [String: [String]]()
+        for header in headers {
+            var colValue = [String]()
+            for row in rows {
+                colValue.append(row[header]!)
+            }
+            columns[header] = colValue
+        }
+        self.columns = columns
     }
     
 }
