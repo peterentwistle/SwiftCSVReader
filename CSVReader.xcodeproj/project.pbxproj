@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D009CC451AAA5FC600B030BA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009CC441AAA5FC600B030BA /* main.swift */; };
+		D009CC4C1AAA600D00B030BA /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009CC4B1AAA600D00B030BA /* CSVReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		D009CC411AAA5FC600B030BA /* CSVReader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSVReader; sourceTree = BUILT_PRODUCTS_DIR; };
-		D009CC441AAA5FC600B030BA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D009CC4B1AAA600D00B030BA /* CSVReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 		D009CC431AAA5FC600B030BA /* CSVReader */ = {
 			isa = PBXGroup;
 			children = (
-				D009CC441AAA5FC600B030BA /* main.swift */,
+				D009CC4B1AAA600D00B030BA /* CSVReader.swift */,
 			);
 			path = CSVReader;
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D009CC451AAA5FC600B030BA /* main.swift in Sources */,
+				D009CC4C1AAA600D00B030BA /* CSVReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
