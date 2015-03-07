@@ -16,7 +16,7 @@ let csv = CSVReader(fileName: "test")
 
 println(csv.headers)
 println(csv.row(1))
-println(csv.row(1))
+println(csv.row(1)["name"])
 println(csv.numberOfColumns)
 println(csv.numberOfRows)
 ```
@@ -26,7 +26,7 @@ println(csv.numberOfRows)
 ```
 [name, price]
 [price: 1.29, name: water]
-[price: 1.29, name: water]
+Optional("water")
 2
 5
 ```
