@@ -31,7 +31,7 @@ public class CSVReader {
     
     init(fileName: String) {
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "csv")
-        var csv = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)!
+        var csv = try! String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
         csv = csv.stringByReplacingOccurrencesOfString("\r", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         processLines(csv)
         _numberOfColumns = _lines[0].componentsSeparatedByString(",").count
