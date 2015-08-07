@@ -1,16 +1,18 @@
 # SwiftCSVReader
-A simple CSV Reader for swift
+A simple CSV Reader for swift.
+
+NOTE: This is currently an experimental project using Swift 2.0 and built using Xcode-beta 5.
 
 ## Usage
-### test.csv
+### Initialisation
+```swift
+import CSVReader
 ```
-name,price
-water,1.29
-coffee,1.99
-tea,1.89
-orange,1.49
+```swift
+let csv = CSVReader(fileName: "test")
 ```
-### Example
+
+## Example
 ```swift
 import CSVReader
 
@@ -24,6 +26,15 @@ print(csv.columns["name"])
 print(csv.columns["price"])
 print(csv.numberOfColumns)
 print(csv.numberOfRows)
+```
+
+### test.csv
+```
+name,price
+water,1.29
+coffee,1.99
+tea,1.89
+orange,1.49
 ```
 
 ## Output
