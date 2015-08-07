@@ -26,6 +26,7 @@ public class CSVReader {
     
     private var _numberOfColumns: Int = 0
     private var _numberOfRows: Int = 0
+    private var _delimiter: String
     private var _lines = [String]()
     public var headers = [String]()
     public var columns = [String: [String]]()
@@ -43,16 +44,21 @@ public class CSVReader {
         }
     }
     
-    init(fileName: String) {
+    public init(fileName: String, delimiter: String) {
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "csv")
         var csv = try! String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
         csv = csv.stringByReplacingOccurrencesOfString("\r", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        _delimiter = delimiter
         processLines(csv)
-        _numberOfColumns = _lines[0].componentsSeparatedByString(",").count
+        _numberOfColumns = _lines[0].componentsSeparatedByString(_delimiter).count
         _numberOfRows = _lines.count - 1
-        headers = _lines[0].componentsSeparatedByString(",")
+        headers = _lines[0].componentsSeparatedByString(_delimiter)
         setRows()
         setColumns()
+    }
+    
+    public convenience init(fileName: String) {
+        self.init(fileName: fileName, delimiter: ",")
     }
     
     private func processLines(csv: String) {
@@ -71,7 +77,7 @@ public class CSVReader {
         var rows = [[String: String]]()
         for i in 1..._numberOfRows {
             var row = [String: String]()
-            let vals = _lines[i].componentsSeparatedByString(",")
+            let vals = _lines[i].componentsSeparatedByString(_delimiter)
             var i = 0
             for header in headers {
                 row[header] = vals[i++]
