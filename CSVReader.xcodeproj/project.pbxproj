@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D0995E371B7403A2001D5B48 /* SourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0995E361B7403A2001D5B48 /* SourceTests.swift */; };
 		D0995E461B7404BD001D5B48 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0995E451B7404BD001D5B48 /* main.swift */; };
 		D0995E4D1B740C09001D5B48 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009CC4B1AAA600D00B030BA /* CSVReader.swift */; };
 		D0995E501B740F71001D5B48 /* test.csv in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0995E4E1B740C63001D5B48 /* test.csv */; };
@@ -50,9 +49,6 @@
 
 /* Begin PBXFileReference section */
 		D009CC4B1AAA600D00B030BA /* CSVReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVReader.swift; sourceTree = "<group>"; };
-		D0995E311B7403A2001D5B48 /* SourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0995E361B7403A2001D5B48 /* SourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTests.swift; sourceTree = "<group>"; };
-		D0995E381B7403A2001D5B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0995E431B7404BD001D5B48 /* Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Example; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0995E451B7404BD001D5B48 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D0995E4E1B740C63001D5B48 /* test.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.csv; sourceTree = "<group>"; };
@@ -65,13 +61,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D0995E2E1B7403A2001D5B48 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D0995E401B7404BD001D5B48 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,9 +89,8 @@
 		D009CC381AAA5FC600B030BA = {
 			isa = PBXGroup;
 			children = (
-				D0995E351B7403A2001D5B48 /* SourceTests */,
 				D0995E441B7404BD001D5B48 /* Example */,
-				D0BF2A6E1B752E0D00EA2E53 /* Source */,
+				D0BF2A6E1B752E0D00EA2E53 /* CSVReader */,
 				D0BF2A7A1B752E0D00EA2E53 /* CSVReaderTests */,
 				D009CC421AAA5FC600B030BA /* Products */,
 			);
@@ -111,21 +99,11 @@
 		D009CC421AAA5FC600B030BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0995E311B7403A2001D5B48 /* SourceTests.xctest */,
 				D0995E431B7404BD001D5B48 /* Example */,
 				D0BF2A6D1B752E0D00EA2E53 /* CSVReader.framework */,
 				D0BF2A761B752E0D00EA2E53 /* CSVReaderTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D0995E351B7403A2001D5B48 /* SourceTests */ = {
-			isa = PBXGroup;
-			children = (
-				D0995E361B7403A2001D5B48 /* SourceTests.swift */,
-				D0995E381B7403A2001D5B48 /* Info.plist */,
-			);
-			path = SourceTests;
 			sourceTree = "<group>";
 		};
 		D0995E441B7404BD001D5B48 /* Example */ = {
@@ -137,14 +115,13 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		D0BF2A6E1B752E0D00EA2E53 /* Source */ = {
+		D0BF2A6E1B752E0D00EA2E53 /* CSVReader */ = {
 			isa = PBXGroup;
 			children = (
 				D009CC4B1AAA600D00B030BA /* CSVReader.swift */,
 				D0BF2A6F1B752E0D00EA2E53 /* CSVReader.h */,
 				D0BF2A711B752E0D00EA2E53 /* Info.plist */,
 			);
-			name = Source;
 			path = CSVReader;
 			sourceTree = "<group>";
 		};
@@ -171,23 +148,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D0995E301B7403A2001D5B48 /* SourceTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D0995E3C1B7403A2001D5B48 /* Build configuration list for PBXNativeTarget "SourceTests" */;
-			buildPhases = (
-				D0995E2D1B7403A2001D5B48 /* Sources */,
-				D0995E2E1B7403A2001D5B48 /* Frameworks */,
-				D0995E2F1B7403A2001D5B48 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SourceTests;
-			productName = SourceTests;
-			productReference = D0995E311B7403A2001D5B48 /* SourceTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		D0995E421B7404BD001D5B48 /* Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0995E471B7404BD001D5B48 /* Build configuration list for PBXNativeTarget "Example" */;
@@ -253,9 +213,6 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Peter Entwistle";
 				TargetAttributes = {
-					D0995E301B7403A2001D5B48 = {
-						CreatedOnToolsVersion = 7.0;
-					};
 					D0995E421B7404BD001D5B48 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -279,7 +236,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D0995E301B7403A2001D5B48 /* SourceTests */,
 				D0995E421B7404BD001D5B48 /* Example */,
 				D0BF2A6C1B752E0D00EA2E53 /* CSVReader */,
 				D0BF2A751B752E0D00EA2E53 /* CSVReaderTests */,
@@ -288,13 +244,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D0995E2F1B7403A2001D5B48 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D0BF2A6B1B752E0D00EA2E53 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,14 +261,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D0995E2D1B7403A2001D5B48 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D0995E371B7403A2001D5B48 /* SourceTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D0995E3F1B7404BD001D5B48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,32 +372,6 @@
 			};
 			name = Release;
 		};
-		D0995E3D1B7403A2001D5B48 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = SourceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.peterentwistle.SourceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		D0995E3E1B7403A2001D5B48 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = SourceTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.peterentwistle.SourceTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		D0995E481B7404BD001D5B48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -559,15 +474,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0995E3C1B7403A2001D5B48 /* Build configuration list for PBXNativeTarget "SourceTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D0995E3D1B7403A2001D5B48 /* Debug */,
-				D0995E3E1B7403A2001D5B48 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D0995E471B7404BD001D5B48 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -584,6 +490,7 @@
 				D0BF2A801B752E0D00EA2E53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0BF2A811B752E0D00EA2E53 /* Build configuration list for PBXNativeTarget "CSVReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +499,7 @@
 				D0BF2A831B752E0D00EA2E53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
