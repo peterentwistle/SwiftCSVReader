@@ -38,3 +38,6 @@ Optional(["1.29", "1.99", "1.89", "1.49"])
 2
 4
 ```
+
+## License
+SwiftCSVReader is released under the MIT license. See LICENSE for details.
