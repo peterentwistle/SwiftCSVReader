@@ -10,18 +10,20 @@ coffee,1.99
 tea,1.89
 orange,1.49
 ```
-### test.swift
+### Example
 ```swift
+import CSVReader
+
 let csv = CSVReader(fileName: "test")
 
-println(csv.headers)
-println(csv.rows[0])
-println(csv.rows[1]["name"])
-println(csv.rows[1]["price"])
-println(csv.columns["name"])
-println(csv.columns["price"])
-println(csv.numberOfColumns)
-println(csv.numberOfRows)
+print(csv.headers)
+print(csv.rows[0])
+print(csv.rows[1]["name"])
+print(csv.rows[1]["price"])
+print(csv.columns["name"])
+print(csv.columns["price"])
+print(csv.numberOfColumns)
+print(csv.numberOfRows)
 ```
 
 ## Output
