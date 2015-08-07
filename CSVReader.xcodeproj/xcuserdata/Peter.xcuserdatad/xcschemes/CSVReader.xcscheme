@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D0995E271B7403A1001D5B48"
-               BuildableName = "Source.framework"
-               BlueprintName = "Source"
+               BlueprintIdentifier = "D0BF2A6C1B752E0D00EA2E53"
+               BuildableName = "CSVReader.framework"
+               BlueprintName = "CSVReader"
                ReferencedContainer = "container:CSVReader.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D0995E301B7403A2001D5B48"
-               BuildableName = "SourceTests.xctest"
-               BlueprintName = "SourceTests"
+               BlueprintIdentifier = "D0BF2A751B752E0D00EA2E53"
+               BuildableName = "CSVReaderTests.xctest"
+               BlueprintName = "CSVReaderTests"
                ReferencedContainer = "container:CSVReader.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D0995E271B7403A1001D5B48"
-            BuildableName = "Source.framework"
-            BlueprintName = "Source"
+            BlueprintIdentifier = "D0BF2A6C1B752E0D00EA2E53"
+            BuildableName = "CSVReader.framework"
+            BlueprintName = "CSVReader"
             ReferencedContainer = "container:CSVReader.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D0995E271B7403A1001D5B48"
-            BuildableName = "Source.framework"
-            BlueprintName = "Source"
+            BlueprintIdentifier = "D0BF2A6C1B752E0D00EA2E53"
+            BuildableName = "CSVReader.framework"
+            BlueprintName = "CSVReader"
             ReferencedContainer = "container:CSVReader.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D0995E271B7403A1001D5B48"
-            BuildableName = "Source.framework"
-            BlueprintName = "Source"
+            BlueprintIdentifier = "D0BF2A6C1B752E0D00EA2E53"
+            BuildableName = "CSVReader.framework"
+            BlueprintName = "CSVReader"
             ReferencedContainer = "container:CSVReader.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

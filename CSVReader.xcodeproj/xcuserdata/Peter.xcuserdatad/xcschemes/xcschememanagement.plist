@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Example.xcscheme</key>
+		<key>CSVReader.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Source.xcscheme</key>
+		<key>Example.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -33,6 +33,16 @@
 			<true/>
 		</dict>
 		<key>D0995E421B7404BD001D5B48</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0BF2A6C1B752E0D00EA2E53</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0BF2A751B752E0D00EA2E53</key>
 		<dict>
 			<key>primary</key>
 			<true/>
