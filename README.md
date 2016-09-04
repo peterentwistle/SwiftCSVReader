@@ -1,7 +1,7 @@
 # SwiftCSVReader
 A simple CSV Reader for swift.
 
-NOTE: This is currently an experimental project using Swift 2.0 and built using Xcode 7 beta 5.
+NOTE: This is currently an experimental project using Swift 3.0 and built using Xcode 8 beta 6.
 
 ## Usage
 ### Initialisation

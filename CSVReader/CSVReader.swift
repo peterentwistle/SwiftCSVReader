@@ -22,37 +22,37 @@
 
 import Foundation
 
-public class CSVReader {
+open class CSVReader {
     
-    private var _numberOfColumns: Int = 0
-    private var _numberOfRows: Int = 0
-    private var _delimiter: String
-    private var _lines = [String]()
-    public var headers = [String]()
-    public var columns = [String: [String]]()
-    public var rows = [[String: String]]()
+    fileprivate var _numberOfColumns: Int = 0
+    fileprivate var _numberOfRows: Int = 0
+    fileprivate var _delimiter: String
+    fileprivate var _lines = [String]()
+    open var headers = [String]()
+    open var columns = [String: [String]]()
+    open var rows = [[String: String]]()
     
-    public var numberOfColumns: Int {
+    open var numberOfColumns: Int {
         get {
             return _numberOfColumns
         }
     }
     
-    public var numberOfRows: Int {
+    open var numberOfRows: Int {
         get {
             return _numberOfRows
         }
     }
     
     public init(fileName: String, delimiter: String) {
-        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "csv")
-        var csv = try! String(contentsOfFile: path!, encoding: NSUTF8StringEncoding)
-        csv = csv.stringByReplacingOccurrencesOfString("\r", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let path = Bundle.main.path(forResource: fileName, ofType: "csv")
+        var csv = try! String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+        csv = csv.replacingOccurrences(of: "\r", with: "", options: NSString.CompareOptions.literal, range: nil)
         _delimiter = delimiter
         processLines(csv)
-        _numberOfColumns = _lines[0].componentsSeparatedByString(_delimiter).count
+        _numberOfColumns = _lines[0].components(separatedBy: _delimiter).count
         _numberOfRows = _lines.count - 1
-        headers = _lines[0].componentsSeparatedByString(_delimiter)
+        headers = _lines[0].components(separatedBy: _delimiter)
         setRows()
         setColumns()
     }
@@ -61,33 +61,35 @@ public class CSVReader {
         self.init(fileName: fileName, delimiter: ",")
     }
     
-    private func processLines(csv: String) {
-        _lines = csv.componentsSeparatedByString("\n")
+    fileprivate func processLines(_ csv: String) {
+        _lines = csv.components(separatedBy: "\n")
         // Remove blank lines
         var i = 0
         for line in _lines {
             if line.isEmpty {
-                _lines.removeAtIndex(i--)
+                _lines.remove(at: i)
+                i -= 1
             }
-            i++
+            i += 1
         }
     }
     
-    private func setRows() {
+    fileprivate func setRows() {
         var rows = [[String: String]]()
         for i in 1..._numberOfRows {
             var row = [String: String]()
-            let vals = _lines[i].componentsSeparatedByString(_delimiter)
+            let vals = _lines[i].components(separatedBy: _delimiter)
             var i = 0
             for header in headers {
-                row[header] = vals[i++]
+                row[header] = vals[i]
+                i+=1
             }
             rows.append(row)
         }
         self.rows = rows
     }
     
-    private func setColumns() {
+    fileprivate func setColumns() {
         var columns = [String: [String]]()
         for header in headers {
             var colValue = [String]()
