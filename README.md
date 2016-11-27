@@ -1,6 +1,9 @@
 # SwiftCSVReader
 A simple CSV Reader for swift.
 
+[![Build Status](https://travis-ci.org/peterentwistle/SwiftCSVReader.svg?branch=master)](https://travis-ci.org/peterentwistle/SwiftCSVReader)
+[![Licence](https://img.shields.io/badge/Licence-MIT-lightgrey.svg)](https://github.com/peterentwistle/SwiftCSVReader/blob/master/LICENSE)
+
 ## Usage
 ### Initialisation
 ```swift
