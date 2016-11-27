@@ -1,7 +1,8 @@
 # SwiftCSVReader
 A simple CSV Reader for swift.
 
-NOTE: This is currently an experimental project using Swift 2.0 and built using Xcode 7 beta 5.
+[![Build Status](https://travis-ci.org/peterentwistle/SwiftCSVReader.svg?branch=master)](https://travis-ci.org/peterentwistle/SwiftCSVReader)
+[![Licence](https://img.shields.io/badge/Licence-MIT-lightgrey.svg)](https://github.com/peterentwistle/SwiftCSVReader/blob/master/LICENSE)
 
 ## Usage
 ### Initialisation
@@ -9,21 +10,31 @@ NOTE: This is currently an experimental project using Swift 2.0 and built using 
 import CSVReader
 ```
 ```swift
-let csv = CSVReader(fileName: "test")
+let csvData = "name,price\n" +
+              "water,1.29\n" +
+              "coffee,1.99\n" +
+              "tea,1.89\n" +
+              "orange,1.49\n"
+
+let csv = CSVReader(with: csvData)
 ```
 
 ## Example
 ```swift
 import CSVReader
 
-let csv = CSVReader(fileName: "test")
+// Load csv
+let path = Bundle.main.path(forResource: "test", ofType: "csv")
+let testCsvFile = try! String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+
+let csv = CSVReader(with: testCsvFile)
 
 print(csv.headers)
 print(csv.rows[0])
-print(csv.rows[1]["name"])
-print(csv.rows[1]["price"])
-print(csv.columns["name"])
-print(csv.columns["price"])
+print(csv.rows[1]["name"]!)
+print(csv.rows[1]["price"]!)
+print(csv.columns["name"]!)
+print(csv.columns["price"]!)
 print(csv.numberOfColumns)
 print(csv.numberOfRows)
 ```

@@ -1,6 +1,7 @@
+//
 //  CSVReaderTests.swift
 //
-//  Copyright (c) 2015 Peter Entwistle
+//  Copyright (c) 2016 Peter Entwistle
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -19,15 +20,23 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+//
 
 import XCTest
 @testable import CSVReader
 
 class CSVReaderTests: XCTestCase {
     
+    var csvReader: CSVReader!
+    let csvData = "name,price\n" +
+                  "water,1.29\n" +
+                  "coffee,1.99\n" +
+                  "tea,1.89\n" +
+                  "orange,1.49\n"
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        csvReader = CSVReader(with: csvData)
     }
     
     override func tearDown() {
@@ -35,16 +44,42 @@ class CSVReaderTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCSVHasCorrectNumberOfRows() {
+        XCTAssert(csvReader.numberOfRows == 4)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testCSVHasCorrectNumberOfColumns() {
+        XCTAssert(csvReader.numberOfColumns == 2)
     }
     
+    func testFirstRowHasCorrectValue() {
+        print(csvReader.rows[0])
+        XCTAssert(csvReader.rows[0] == ["name":"water", "price":"1.29"])
+    }
+    
+    func testHeadersAreCorrect() {
+        XCTAssertTrue(csvReader.headers == ["name","price"])
+    }
+    
+    func testRowValuesForNameHasCorrectValue() {
+        XCTAssertTrue(csvReader.rows[0]["name"] == "water")
+        XCTAssertTrue(csvReader.rows[1]["name"] == "coffee")
+        XCTAssertTrue(csvReader.rows[2]["name"] == "tea")
+        XCTAssertTrue(csvReader.rows[3]["name"] == "orange")
+    }
+
+    func testRowValuesForPriceHasCorrectValue() {
+        XCTAssertTrue(csvReader.rows[0]["price"] == "1.29")
+        XCTAssertTrue(csvReader.rows[1]["price"] == "1.99")
+        XCTAssertTrue(csvReader.rows[2]["price"] == "1.89")
+        XCTAssertTrue(csvReader.rows[3]["price"] == "1.49")
+    }
+    
+    func testColumnValuesForName() {
+        XCTAssertTrue(csvReader.columns["name"]! == ["water","coffee","tea","orange"])
+    }
+    
+    func testColumnValuesForPrice() {
+        XCTAssertTrue(csvReader.columns["price"]! == ["1.29","1.99","1.89","1.49"])
+    }
 }

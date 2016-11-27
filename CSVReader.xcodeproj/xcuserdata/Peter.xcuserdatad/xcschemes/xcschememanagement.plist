@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CSVReader.xcscheme</key>
+		<key>CSVReader.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -18,6 +18,26 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>D009CC401AAA5FC600B030BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D087AF991DEB664200A1E678</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D087AFA51DEB690A00A1E678</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D087AFB81DEB696F00A1E678</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D087AFC31DEB69B300A1E678</key>
 		<dict>
 			<key>primary</key>
 			<true/>

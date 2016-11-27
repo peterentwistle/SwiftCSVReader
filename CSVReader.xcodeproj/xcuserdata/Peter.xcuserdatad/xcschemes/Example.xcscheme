@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D0995E421B7404BD001D5B48"
-               BuildableName = "Example"
+               BlueprintIdentifier = "D087AFC31DEB69B300A1E678"
+               BuildableName = "Example.app"
                BlueprintName = "Example"
                ReferencedContainer = "container:CSVReader.xcodeproj">
             </BuildableReference>
@@ -32,8 +32,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D0995E421B7404BD001D5B48"
-            BuildableName = "Example"
+            BlueprintIdentifier = "D087AFC31DEB69B300A1E678"
+            BuildableName = "Example.app"
             BlueprintName = "Example"
             ReferencedContainer = "container:CSVReader.xcodeproj">
          </BuildableReference>
@@ -55,8 +55,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D0995E421B7404BD001D5B48"
-            BuildableName = "Example"
+            BlueprintIdentifier = "D087AFC31DEB69B300A1E678"
+            BuildableName = "Example.app"
             BlueprintName = "Example"
             ReferencedContainer = "container:CSVReader.xcodeproj">
          </BuildableReference>
@@ -74,8 +74,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D0995E421B7404BD001D5B48"
-            BuildableName = "Example"
+            BlueprintIdentifier = "D087AFC31DEB69B300A1E678"
+            BuildableName = "Example.app"
             BlueprintName = "Example"
             ReferencedContainer = "container:CSVReader.xcodeproj">
          </BuildableReference>

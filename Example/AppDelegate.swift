@@ -1,6 +1,8 @@
-//  main.swift
 //
-//  Copyright (c) 2015 Peter Entwistle
+//  AppDelegate.swift
+//  Example
+//
+//  Copyright (c) 2016 Peter Entwistle
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -19,16 +21,20 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+//
 
-import CSVReader
+import Cocoa
 
-let csv = CSVReader(fileName: "test")
+@NSApplicationMain
+class AppDelegate: NSObject, NSApplicationDelegate {
 
-print(csv.headers)
-print(csv.rows[0])
-print(csv.rows[1]["name"])
-print(csv.rows[1]["price"])
-print(csv.columns["name"])
-print(csv.columns["price"])
-print(csv.numberOfColumns)
-print(csv.numberOfRows)
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Insert code here to initialize your application
+    }
+
+    func applicationWillTerminate(_ aNotification: Notification) {
+        // Insert code here to tear down your application
+    }
+
+}
+
