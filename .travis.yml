@@ -1,4 +1,6 @@
 language: objective-c
 osx_image: xcode8.1
-xcode_project: CSVReader.xcodeproj
-xcode_scheme: CSVReader
+script:
+  -project CSVReader.xcodeproj
+  -scheme CSVReader
+  build test
