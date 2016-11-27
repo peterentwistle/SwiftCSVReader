@@ -1,6 +1,7 @@
+//
 //  CSVReader.swift
 //
-//  Copyright (c) 2015 Peter Entwistle
+//  Copyright (c) 2016 Peter Entwistle
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -19,6 +20,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+//
 
 import Foundation
 
@@ -44,10 +46,8 @@ open class CSVReader {
         }
     }
     
-    public init(fileName: String, delimiter: String) {
-        let path = Bundle.main.path(forResource: fileName, ofType: "csv")
-        var csv = try! String(contentsOfFile: path!, encoding: String.Encoding.utf8)
-        csv = csv.replacingOccurrences(of: "\r", with: "", options: NSString.CompareOptions.literal, range: nil)
+    public init(with: String, delimiter: String) {
+        let csv = with.replacingOccurrences(of: "\r", with: "", options: NSString.CompareOptions.literal, range: nil)
         _delimiter = delimiter
         processLines(csv)
         _numberOfColumns = _lines[0].components(separatedBy: _delimiter).count
@@ -57,8 +57,8 @@ open class CSVReader {
         setColumns()
     }
     
-    public convenience init(fileName: String) {
-        self.init(fileName: fileName, delimiter: ",")
+    public convenience init(with: String) {
+        self.init(with: with, delimiter: ",")
     }
     
     fileprivate func processLines(_ csv: String) {
