@@ -82,4 +82,19 @@ class CSVReaderTests: XCTestCase {
     func testColumnValuesForPrice() {
         XCTAssertTrue(csvReader.columns["price"]! == ["1.29","1.99","1.89","1.49"])
     }
+    
+    func testDelimiter() {
+        let tabSeperatedValueData = "name\tprice\n" +
+                                    "water\t1.29\n" +
+                                    "coffee\t1.99\n" +
+                                    "tea\t1.89\n" +
+                                    "orange\t1.49\n"
+        
+        let tsvReader = CSVReader(with: tabSeperatedValueData, delimiter: "\t")
+        
+        XCTAssert(tsvReader.columns["name"]! == ["water","coffee","tea","orange"])
+        XCTAssert(tsvReader.numberOfRows == 4)
+        XCTAssert(tsvReader.numberOfColumns == 2)
+        XCTAssertTrue(tsvReader.headers == ["name","price"])
+    }
 }
