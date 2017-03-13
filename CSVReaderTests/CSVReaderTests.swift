@@ -27,7 +27,7 @@ import XCTest
 
 class CSVReaderTests: XCTestCase {
     
-    var csvReader: CSVReader!
+    var csv: CSVReader!
     let csvData = "name,price\n" +
                   "water,1.29\n" +
                   "coffee,1.99\n" +
@@ -36,7 +36,7 @@ class CSVReaderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        csvReader = CSVReader(with: csvData)
+        csv = CSVReader(with: csvData)
     }
     
     override func tearDown() {
@@ -45,42 +45,42 @@ class CSVReaderTests: XCTestCase {
     }
     
     func testCSVHasCorrectNumberOfRows() {
-        XCTAssert(csvReader.numberOfRows == 4)
+        XCTAssert(csv.numberOfRows == 4)
     }
     
     func testCSVHasCorrectNumberOfColumns() {
-        XCTAssert(csvReader.numberOfColumns == 2)
+        XCTAssert(csv.numberOfColumns == 2)
     }
     
     func testFirstRowHasCorrectValue() {
-        print(csvReader.rows[0])
-        XCTAssert(csvReader.rows[0] == ["name":"water", "price":"1.29"])
+        print(csv.rows[0])
+        XCTAssert(csv.rows[0] == ["name":"water", "price":"1.29"])
     }
     
     func testHeadersAreCorrect() {
-        XCTAssertTrue(csvReader.headers == ["name","price"])
+        XCTAssertTrue(csv.headers == ["name","price"])
     }
     
     func testRowValuesForNameHasCorrectValue() {
-        XCTAssertTrue(csvReader.rows[0]["name"] == "water")
-        XCTAssertTrue(csvReader.rows[1]["name"] == "coffee")
-        XCTAssertTrue(csvReader.rows[2]["name"] == "tea")
-        XCTAssertTrue(csvReader.rows[3]["name"] == "orange")
+        XCTAssertTrue(csv.rows[0]["name"] == "water")
+        XCTAssertTrue(csv.rows[1]["name"] == "coffee")
+        XCTAssertTrue(csv.rows[2]["name"] == "tea")
+        XCTAssertTrue(csv.rows[3]["name"] == "orange")
     }
-
+    
     func testRowValuesForPriceHasCorrectValue() {
-        XCTAssertTrue(csvReader.rows[0]["price"] == "1.29")
-        XCTAssertTrue(csvReader.rows[1]["price"] == "1.99")
-        XCTAssertTrue(csvReader.rows[2]["price"] == "1.89")
-        XCTAssertTrue(csvReader.rows[3]["price"] == "1.49")
+        XCTAssertTrue(csv.rows[0]["price"] == "1.29")
+        XCTAssertTrue(csv.rows[1]["price"] == "1.99")
+        XCTAssertTrue(csv.rows[2]["price"] == "1.89")
+        XCTAssertTrue(csv.rows[3]["price"] == "1.49")
     }
     
     func testColumnValuesForName() {
-        XCTAssertTrue(csvReader.columns["name"]! == ["water","coffee","tea","orange"])
+        XCTAssertTrue(csv.columns["name"]! == ["water","coffee","tea","orange"])
     }
     
     func testColumnValuesForPrice() {
-        XCTAssertTrue(csvReader.columns["price"]! == ["1.29","1.99","1.89","1.49"])
+        XCTAssertTrue(csv.columns["price"]! == ["1.29","1.99","1.89","1.49"])
     }
     
     func testDelimiter() {
@@ -90,11 +90,40 @@ class CSVReaderTests: XCTestCase {
                                     "tea\t1.89\n" +
                                     "orange\t1.49\n"
         
-        let tsvReader = CSVReader(with: tabSeperatedValueData, delimiter: "\t")
+        let tsv = CSVReader(with: tabSeperatedValueData, delimiter: "\t")
         
-        XCTAssert(tsvReader.columns["name"]! == ["water","coffee","tea","orange"])
-        XCTAssert(tsvReader.numberOfRows == 4)
-        XCTAssert(tsvReader.numberOfColumns == 2)
-        XCTAssertTrue(tsvReader.headers == ["name","price"])
+        XCTAssert(tsv.columns["name"]! == ["water","coffee","tea","orange"])
+        XCTAssert(tsv.numberOfRows == 4)
+        XCTAssert(tsv.numberOfColumns == 2)
+        XCTAssertTrue(tsv.headers == ["name","price"])
     }
+    
+    func testReadFromFile() {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "test", ofType: "csv")!
+        
+        let fileCsv = try! CSVReader(path: path)
+        
+        XCTAssertTrue(fileCsv.headers == ["name","price"])
+    }
+    
+    func testReadFromFileSpecifiedDelimeter() {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "test", ofType: "csv")!
+        
+        let fileCsv = try! CSVReader(path: path, delimiter: ",")
+        
+        XCTAssertTrue(fileCsv.headers == ["name","price"])
+    }
+    
+    
+    func testReadFromFileSpecifiedEncoding() {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "test", ofType: "csv")!
+        
+        let fileCsv = try! CSVReader(path: path, encoding: String.Encoding.utf8)
+        
+        XCTAssertTrue(fileCsv.headers == ["name","price"])
+    }
+    
 }

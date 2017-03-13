@@ -43,9 +43,8 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         
         let path = Bundle.main.path(forResource: "test", ofType: "csv")
-        let testCsvFile = try! String(contentsOfFile: path!, encoding: String.Encoding.utf8)
-        
-        let csv = CSVReader(with: testCsvFile)
+
+        let csv = try! CSVReader(path: path!)
         
         //headers.stringValue = headers.stringValue.replacingOccurrences(of: "(value)", with: csv.headers.description)
         replaceStringValue(textField: headers, value: csv.headers.description)

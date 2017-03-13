@@ -30,23 +30,20 @@ open class CSVReader {
     fileprivate var _numberOfRows: Int = 0
     fileprivate var _delimiter: String
     fileprivate var _lines = [String]()
+    
     open var headers = [String]()
     open var columns = [String: [String]]()
     open var rows = [[String: String]]()
     
     open var numberOfColumns: Int {
-        get {
-            return _numberOfColumns
-        }
+        return _numberOfColumns
     }
     
     open var numberOfRows: Int {
-        get {
-            return _numberOfRows
-        }
+        return _numberOfRows
     }
     
-    public init(with: String, delimiter: String) {
+    public init(with: String, delimiter: String = ",") {
         let csv = with.replacingOccurrences(of: "\r", with: "", options: NSString.CompareOptions.literal, range: nil)
         _delimiter = delimiter
         processLines(csv)
@@ -57,8 +54,9 @@ open class CSVReader {
         setColumns()
     }
     
-    public convenience init(with: String) {
-        self.init(with: with, delimiter: ",")
+    public convenience init(path: String, delimiter: String = ",", encoding: String.Encoding = String.Encoding.utf8) throws {
+        let contents = try String(contentsOfFile: path, encoding: encoding)
+        self.init(with: contents, delimiter: delimiter)
     }
     
     fileprivate func processLines(_ csv: String) {

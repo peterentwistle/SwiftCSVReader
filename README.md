@@ -24,11 +24,9 @@ let csv = CSVReader(with: csvData)
 ```swift
 import CSVReader
 
-// Load csv
+// Load CSV from file
 let path = Bundle.main.path(forResource: "test", ofType: "csv")
-let testCsvFile = try! String(contentsOfFile: path!, encoding: String.Encoding.utf8)
-
-let csv = CSVReader(with: testCsvFile)
+let csv = try! CSVReader(path: path!)
 
 print(csv.headers)
 print(csv.rows[0])
