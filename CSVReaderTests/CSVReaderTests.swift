@@ -27,7 +27,7 @@ import XCTest
 
 class CSVReaderTests: XCTestCase {
     
-    var csv: CSVReader!
+    var csv: CSV!
     let csvData = "name,price\n" +
                   "water,1.29\n" +
                   "coffee,1.99\n" +
@@ -36,7 +36,7 @@ class CSVReaderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        csv = CSVReader(with: csvData)
+        csv = CSV(with: csvData)
     }
     
     override func tearDown() {
@@ -90,7 +90,7 @@ class CSVReaderTests: XCTestCase {
                                     "tea\t1.89\n" +
                                     "orange\t1.49\n"
         
-        let tsv = CSVReader(with: tabSeperatedValueData, delimiter: "\t")
+        let tsv = CSV(with: tabSeperatedValueData, delimiter: "\t")
         
         XCTAssert(tsv.columns["name"]! == ["water","coffee","tea","orange"])
         XCTAssert(tsv.numberOfRows == 4)
@@ -102,7 +102,7 @@ class CSVReaderTests: XCTestCase {
         let bundle = Bundle(for: type(of: self))
         let path = bundle.path(forResource: "test", ofType: "csv")!
         
-        let fileCsv = try! CSVReader(path: path)
+        let fileCsv = try! CSV(path: path)
         
         XCTAssertTrue(fileCsv.headers == ["name","price"])
     }
@@ -111,7 +111,7 @@ class CSVReaderTests: XCTestCase {
         let bundle = Bundle(for: type(of: self))
         let path = bundle.path(forResource: "test", ofType: "csv")!
         
-        let fileCsv = try! CSVReader(path: path, delimiter: ",")
+        let fileCsv = try! CSV(path: path, delimiter: ",")
         
         XCTAssertTrue(fileCsv.headers == ["name","price"])
     }
@@ -121,7 +121,7 @@ class CSVReaderTests: XCTestCase {
         let bundle = Bundle(for: type(of: self))
         let path = bundle.path(forResource: "test", ofType: "csv")!
         
-        let fileCsv = try! CSVReader(path: path, encoding: String.Encoding.utf8)
+        let fileCsv = try! CSV(path: path, encoding: .utf8)
         
         XCTAssertTrue(fileCsv.headers == ["name","price"])
     }
