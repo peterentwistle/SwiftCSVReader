@@ -1,7 +1,8 @@
 //
-//  CSVReader.swift
+//  CSV.swift
+//  CSVReader
 //
-//  Copyright (c) 2016 Peter Entwistle
+//  Copyright © 2017 Peter Entwistle
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
