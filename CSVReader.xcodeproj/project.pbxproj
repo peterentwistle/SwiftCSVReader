@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D063E88F1F3133CE00A0AD6D /* CSVWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063E88E1F3133CE00A0AD6D /* CSVWriterTests.swift */; };
-		D063E8901F31376600A0AD6D /* CSVReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BF2A6D1B752E0D00EA2E53 /* CSVReader.framework */; };
 		D063E8A21F313A4600A0AD6D /* CSV+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063E8A11F313A4600A0AD6D /* CSV+Read.swift */; };
 		D063E8A61F36196100A0AD6D /* Readable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063E8A51F36196100A0AD6D /* Readable.swift */; };
 		D063E8A81F3619A700A0AD6D /* Writable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063E8A71F3619A700A0AD6D /* Writable.swift */; };
+		D063E8A91F362A3B00A0AD6D /* CSVReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BF2A6D1B752E0D00EA2E53 /* CSVReader.framework */; };
 		D087AFC71DEB69B300A1E678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087AFC61DEB69B300A1E678 /* AppDelegate.swift */; };
 		D087AFC91DEB69B300A1E678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087AFC81DEB69B300A1E678 /* ViewController.swift */; };
 		D087AFCB1DEB69B300A1E678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D087AFCA1DEB69B300A1E678 /* Assets.xcassets */; };
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D063E8901F31376600A0AD6D /* CSVReader.framework in Frameworks */,
+				D063E8A91F362A3B00A0AD6D /* CSVReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +491,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -517,7 +517,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.peterentwistle.CSVReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -535,7 +535,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.peterentwistle.CSVReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -551,7 +551,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.peterentwistle.CSVReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
