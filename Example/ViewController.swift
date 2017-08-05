@@ -44,7 +44,7 @@ class ViewController: NSViewController {
         
         let path = Bundle.main.path(forResource: "test", ofType: "csv")
 
-        let csv = try! CSVReader(path: path!)
+        let csv = try! CSV(path: path!)
         
         //headers.stringValue = headers.stringValue.replacingOccurrences(of: "(value)", with: csv.headers.description)
         replaceStringValue(textField: headers, value: csv.headers.description)
@@ -55,7 +55,6 @@ class ViewController: NSViewController {
         replaceStringValue(textField: columnsPrice, value: csv.columns["price"]!.description)
         replaceStringValue(textField: numColumns, value: csv.numberOfColumns.description)
         replaceStringValue(textField: numRows, value: csv.numberOfRows.description)
-        
     }
 
     override var representedObject: Any? {
@@ -68,6 +67,4 @@ class ViewController: NSViewController {
         textField.stringValue = textField.stringValue.replacingOccurrences(of: "(value)", with: value)
     }
 
-
 }
-
