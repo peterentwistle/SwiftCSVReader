@@ -1,7 +1,7 @@
 # SwiftCSVReader
 A simple CSV Reader for swift.
 
-![Swift](http://img.shields.io/badge/swift-3.0-brightgreen.svg)
+![Swift](https://img.shields.io/badge/swift-4.0-brightgreen.svg)
 [![Build Status](https://travis-ci.org/peterentwistle/SwiftCSVReader.svg?branch=master)](https://travis-ci.org/peterentwistle/SwiftCSVReader)
 [![Licence](https://img.shields.io/badge/Licence-MIT-lightgrey.svg)](https://github.com/peterentwistle/SwiftCSVReader/blob/master/LICENSE)
 
@@ -17,7 +17,7 @@ let csvData = "name,price\n" +
               "tea,1.89\n" +
               "orange,1.49\n"
 
-let csv = CSVReader(with: csvData)
+let csv = CSV(with: csvData)
 ```
 
 ## Example
@@ -26,7 +26,7 @@ import CSVReader
 
 // Load CSV from file
 let path = Bundle.main.path(forResource: "test", ofType: "csv")
-let csv = try! CSVReader(path: path!)
+let csv = try! CSV(path: path!)
 
 print(csv.headers)
 print(csv.rows[0])
