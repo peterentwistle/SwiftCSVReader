@@ -1,4 +1,4 @@
 language: swift
-osx_image: xcode9.3
+osx_image: xcode10
 script:
   xcodebuild -project CSVReader.xcodeproj -scheme CSVReader build test
