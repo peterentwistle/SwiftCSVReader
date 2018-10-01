@@ -47,7 +47,7 @@ public class CSV {
         lines = [String]()
         numberOfColumns = 0
         numberOfRows = 0
-        
+
         read()
     }
 

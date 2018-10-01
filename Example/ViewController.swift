@@ -36,16 +36,16 @@ class ViewController: NSViewController {
     @IBOutlet weak var columnsPrice: NSTextField!
     @IBOutlet weak var numColumns: NSTextField!
     @IBOutlet weak var numRows: NSTextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+
         let path = Bundle.main.path(forResource: "test", ofType: "csv")
 
         let csv = try! CSV(path: path!)
-        
+
         //headers.stringValue = headers.stringValue.replacingOccurrences(of: "(value)", with: csv.headers.description)
         replaceStringValue(textField: headers, value: csv.headers.description)
         replaceStringValue(textField: row1, value: csv.rows[0].description)
@@ -62,7 +62,7 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-    
+
     func replaceStringValue(textField: NSTextField, value: String) {
         textField.stringValue = textField.stringValue.replacingOccurrences(of: "(value)", with: value)
     }

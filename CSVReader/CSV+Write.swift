@@ -24,21 +24,21 @@
 //
 
 extension CSV: Writable {
-    
+
     public func write(url: URL, delimiter: String = ",", atomically: Bool = true, encoding: String.Encoding = .utf8) {
         let data: String = ""
         try! data.write(to: url, atomically: atomically, encoding: encoding)
     }
-    
+
     func createCSV(delimiter: String) -> String {
         var data = ""
-        
+
         // Start with headers
         for header in headers {
             data += header + delimiter + newLine
         }
-        
+
         return data
     }
-    
+
 }

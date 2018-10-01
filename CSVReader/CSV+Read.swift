@@ -33,7 +33,7 @@ extension CSV: Readable {
         setRows()
         setColumns()
     }
-    
+
     fileprivate func processLines(_ csv: String) {
         lines = csv.components(separatedBy: "\n")
         // Remove blank lines
@@ -46,7 +46,7 @@ extension CSV: Readable {
             i += 1
         }
     }
-    
+
     fileprivate func setRows() {
         var rows = [[String: String]]()
         for i in 1...numberOfRows {
@@ -61,7 +61,7 @@ extension CSV: Readable {
         }
         self.rows = rows
     }
-    
+
     fileprivate func setColumns() {
         var columns = [String: [String]]()
         for header in headers {
@@ -73,5 +73,5 @@ extension CSV: Readable {
         }
         self.columns = columns
     }
-    
+
 }
