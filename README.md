@@ -2,7 +2,7 @@
 A simple CSV Reader for swift.
 
 ![Swift](https://img.shields.io/badge/swift-6.0-brightgreen.svg)
-[![Build Status](https://travis-ci.org/peterentwistle/SwiftCSVReader.svg?branch=master)](https://travis-ci.org/peterentwistle/SwiftCSVReader)
+[![Swift](https://github.com/peterentwistle/SwiftCSVReader/actions/workflows/swift.yml/badge.svg)](https://github.com/peterentwistle/SwiftCSVReader/actions/workflows/swift.yml)
 [![Licence](https://img.shields.io/badge/Licence-MIT-lightgrey.svg)](https://github.com/peterentwistle/SwiftCSVReader/blob/master/LICENSE)
 
 ## Usage

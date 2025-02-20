@@ -1,4 +1,0 @@
-language: swift
-osx_image: xcode16.2
-script:
-  xcodebuild -project CSVReader.xcodeproj -scheme CSVReader build test
