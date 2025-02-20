@@ -25,7 +25,7 @@
 import XCTest
 @testable import CSVReader
 
-class CSVReaderTests: XCTestCase {
+final class CSVReaderTests: XCTestCase {
 
     var csv: CSV!
     let csvData = "name,price\n" +
@@ -99,30 +99,23 @@ class CSVReaderTests: XCTestCase {
     }
 
     func testReadFromFile() {
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "test", ofType: "csv")!
-
+        let path = Bundle.module.path(forResource: "test", ofType: "csv")!
         let fileCsv = try! CSV(path: path)
 
         XCTAssertTrue(fileCsv.headers == ["name", "price"])
     }
 
     func testReadFromFileSpecifiedDelimeter() {
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "test", ofType: "csv")!
-
+        let path = Bundle.module.path(forResource: "test", ofType: "csv")!
         let fileCsv = try! CSV(path: path, delimiter: ",")
 
         XCTAssertTrue(fileCsv.headers == ["name", "price"])
     }
 
     func testReadFromFileSpecifiedEncoding() {
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "test", ofType: "csv")!
-
+        let path = Bundle.module.path(forResource: "test", ofType: "csv")!
         let fileCsv = try! CSV(path: path, encoding: .utf8)
 
         XCTAssertTrue(fileCsv.headers == ["name", "price"])
     }
-
 }

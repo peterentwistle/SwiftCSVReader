@@ -1,5 +1,5 @@
 //
-//  Writable.swift
+//  CSV+Write.swift
 //  CSVReader
 //
 //  Copyright © 2017 Peter Entwistle. All rights reserved.
@@ -23,6 +23,23 @@
 //  SOFTWARE.
 //
 
-protocol Writable {
-    func write(url: URL, delimiter: String, atomically: Bool, encoding: String.Encoding)
+import Foundation
+
+extension CSV: Writable {
+    public func write(url: URL, delimiter: String = ",", atomically: Bool = true, encoding: String.Encoding = .utf8) throws {
+        let data: String = ""
+        try data.write(to: url, atomically: atomically, encoding: encoding)
+    }
+
+    func createCSV(delimiter: String) -> String {
+        var data = ""
+
+        // Start with headers
+        for header in headers {
+            data += header + delimiter + newLine
+        }
+
+        return data
+    }
+
 }

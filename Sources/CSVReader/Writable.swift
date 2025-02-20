@@ -1,8 +1,8 @@
 //
-//  AppDelegate.swift
-//  Example
+//  Writable.swift
+//  CSVReader
 //
-//  Copyright (c) 2016 Peter Entwistle
+//  Copyright © 2017 Peter Entwistle. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -23,17 +23,8 @@
 //  SOFTWARE.
 //
 
-import Cocoa
+import Foundation
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
+protocol Writable {
+    func write(url: URL, delimiter: String, atomically: Bool, encoding: String.Encoding) throws
 }
