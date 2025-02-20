@@ -67,7 +67,9 @@ extension CSV: Readable {
         for header in headers {
             var colValue = [String]()
             for row in rows {
-                colValue.append(row[header]!)
+                if let value = row[header] {
+                    colValue.append(value)
+                }
             }
             columns[header] = colValue
         }
